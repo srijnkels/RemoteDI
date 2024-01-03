@@ -15,7 +15,7 @@
                 ],
                 "generation": 1,
                 "config": {
-                    "script": "import time\n\ndef gen_text():\n    generated_text = 'Hello World!'\n    time.sleep(10)\n    api.send(\"oString\",generated_text)\napi.add_generator(gen_text)\n"
+                    "script": "import time\n\ndef gen_text():\n    generated_text = 'Hello World!'\n    time.sleep(15)\n    api.send(\"oString\",generated_text)\napi.add_generator(gen_text)\n"
                 },
                 "additionaloutports": [
                     {
