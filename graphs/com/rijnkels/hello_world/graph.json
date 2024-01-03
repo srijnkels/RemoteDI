@@ -1,0 +1,62 @@
+{
+    "description": "Hello World Demo for GIT",
+    "processes": {
+        "python3operator1": {
+            "component": "com.sap.system.python3Operator",
+            "metadata": {
+                "label": "Python Generate Hello World",
+                "x": 90,
+                "y": 66,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "filesRequired": [
+                    "script.py"
+                ],
+                "generation": 1,
+                "config": {
+                    "script": "import time\n\ndef gen_text():\n    generated_text = 'Hello World!'\n    time.sleep(10)\n    api.send(\"oString\",generated_text)\napi.add_generator(gen_text)\n"
+                },
+                "additionaloutports": [
+                    {
+                        "name": "oString",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 289,
+                "y": 66,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "ui": "dynpath",
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "214,106 284,106"
+            },
+            "src": {
+                "port": "oString",
+                "process": "python3operator1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "properties": {},
+    "metadata": {}
+}
