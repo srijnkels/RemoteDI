@@ -1,2 +1,0 @@
-# RemoteDI
-Remote DI Repository
